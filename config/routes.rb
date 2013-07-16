@@ -1,4 +1,11 @@
 VLPBill::Application.routes.draw do
+  resources :bills
+
+  resources :theaters
+  resources :prints
+  resources :cubes
+  resources :ufos
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
