@@ -1,4 +1,6 @@
 VLPBill::Application.routes.draw do
+  resources :movies
+
   resources :bills
 
   resources :theaters

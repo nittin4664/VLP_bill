@@ -6,6 +6,8 @@
     <th>Location</th>
     <th>Type</th>
     <th>Email</th>
+    <th>Number</th>
+    <th>Bills Total</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,13 +19,13 @@
     <td><%= theater.location %></td>
     <td><%= theater.type %></td>
     <td><%= theater.email %></td>
-    <td><%= link_to 'Show', theater %></td>
-    <td><%= link_to 'Edit', edit_theater_path(theater) %></td>
-    <td><%= link_to 'Destroy', theater, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= theater.number %></td>
+    <td title=<%= give_details theater.bills %> ><%= theater.bills.map{|bill| bill.amount}.sum %></td>
+    <td><%= link_to "add bill", new_bill_path(:theater_id => theater.id )%></td>
   </tr>
 <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Theater', new_theater_path %>

@@ -25,7 +25,7 @@ class BillsController < ApplicationController
   # GET /bills/new.json
   def new
     @bill = Bill.new
-
+    @theater = Theater.find(params[:theater_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bill }
